@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/tailwind.css">
+  <link rel="stylesheet" href="/landing.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>{{ title }} </title>
+  <script src="/modal.js" defer></script>
+  {{!-- pageStyles: optional array of stylesheet hrefs passed from controller --}}
+  {{#if pageStyles}}
+    {{#each pageStyles}}
+      <link rel="stylesheet" href="{{this}}">
+    {{/each}}
+  {{/if}}
+</head>

@@ -1,0 +1,246 @@
+{{> head }}
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <img src="https://scontent.fmnl3-4.fna.fbcdn.net/v/t39.30808-6/241053730_101835615574165_5859751133645526167_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeG8aJHfil43TPERCYGKBjyZXtOLu9iXrKhe04u72JesqKqKP4S8CQj-GDgVVuQ85WCeCJR7hwn4g5OIkP7Ktcv9&_nc_ohc=BFFviXmvrXcQ7kNvwFObIWG&_nc_oc=AdkFxiRd1V7Wk6sPujBmiAmlPeDmnm_9NP9RS6PXMAOBBb0ly_05yK_a2Z9pZe81q0Y&_nc_zt=23&_nc_ht=scontent.fmnl3-4.fna&_nc_gid=X6399TUAocxlV_9DL9eDWA&oh=00_AfgkAnN2C8onoVvIxkZMpgd7PZqU-lsoXMBtvvVAhrdOmw&oe=691291E4" alt="BMA logo">
+          <div class="logo-text">
+            <h1>Municipal Accounting Office</h1>
+            <p>Bongabong, Oriental Mindoro</p>
+          </div>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#announcements">Announcements</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div style="display:flex; align-items:center; gap:12px;">
+          <button id="signinBtn" class="signin-btn">Sign In</button>
+          <div class="mobile-menu">
+            <i class="fas fa-bars"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  {{> loginModal }}
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <h2>Transparent Financial Management for Bongabong</h2>
+        <p>Ensuring accountability, transparency, and efficiency in the financial operations of our municipality.</p>
+        <a href="#services" class="btn">Our Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our Services</h2>
+        <p>We provide comprehensive financial management services to support the operations of Bongabong's local government..</p>
+      </div>
+      <div class="services-grid">
+        {{#each services}}
+        <div class="service-card">
+          <img src="{{this.iconUrl}}" alt="{{this.title}}" class="service-icon">
+          <h3>{{this.title}}</h3>
+          <p>{{this.description}}</p>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-text">
+          <h2>About Our Office</h2>
+          <p>The Municipal Accounting Office of Bongabong, Oriental Mindoro is committed to maintaining the highest standards of financial management and accountability.</p>
+          <p>Our team of dedicated professionals works diligently to ensure that all financial transactions are properly recorded, reported, and in compliance with government regulations.</p>
+          <p>We strive to support the local government's mission of delivering quality services to the residents of Bongabong through sound financial practices and transparent operations.</p>
+          <a href="#contact" class="btn">Contact Us</a>
+        </div>
+        <div class="about-image">
+          <img src="https://scontent.fmnl3-4.fna.fbcdn.net/v/t1.6435-9/128872667_105932444702893_3799229085388890724_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeF6Yl_QzhdN2CjGhkM0vhdA-IlY-eutZxT4iVj5661nFPNB9B14cwsFvmw40pCpJQqYFmjU757HOcr9iAzvo5Cb&_nc_ohc=ptqzIiAeotQQ7kNvwE7JCXz&_nc_oc=Adl7QsIN4caTq9o0l5sVrMzJcG3yQT0ufaGHJ5e_KD8mQmNwb5Twn_e4Y1ayXRKcuOA&_nc_zt=23&_nc_ht=scontent.fmnl3-4.fna&_nc_gid=EIAMFJ--i4VbgsjoChCziQ&oh=00_AfiCJsL67J4loTUptTjDksP0wruZ8IEZsk0Sru82xqutFg&oe=69341638" alt="Municipal Accounting Office">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Announcements Section -->
+  <section class="announcements" id="announcements">
+    <div class="container">
+      <div class="section-title">
+        <h2>Latest Announcements</h2>
+        <p>Stay updated with the latest news and important notices from our office.</p>
+      </div>
+      <div class="announcement-list">
+        {{#each announcements}}
+        <div class="announcement-item">
+          <h3>{{this.title}}</h3>
+          <div class="announcement-date">
+            <i class="far fa-calendar-alt"></i> {{this.date}}
+          </div>
+          <p>{{this.body}}</p>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-title">
+        <h2>Contact Us</h2>
+        <p>Get in touch with our office for any inquiries or concerns.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Municipal Accounting Office</h3>
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div>
+                {{#each contact.addressLines}}<p>{{this}}</p>{{/each}}
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div>
+                <p>{{contact.phone}}</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div>
+                <p>{{contact.email}}</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div>
+                <p>{{contact.hours}}</p>
+              </div>
+            </div>
+          </div>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="contact-form">
+          <form method="post" action="/contact">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="text" name="subject" placeholder="Subject" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>Municipal Accounting Office</h3>
+          <p>Ensuring financial transparency and accountability for the Municipality of Bongabong, Oriental Mindoro.</p>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#announcements">Announcements</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Resources</h3>
+          <ul class="footer-links">
+            <li><a href="#">Financial Reports</a></li>
+            <li><a href="#">Forms & Documents</a></li>
+            <li><a href="#">Budget Information</a></li>
+            <li><a href="#">Procurement Updates</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2023 Municipal Accounting Office - Bongabong, Oriental Mindoro. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Simple mobile menu toggle
+    document.querySelector('.mobile-menu').addEventListener('click', function() {
+      const nav = document.querySelector('nav ul');
+      if (nav.style.display === 'flex') {
+        nav.style.display = 'none';
+      } else {
+        nav.style.display = 'flex';
+        nav.style.flexDirection = 'column';
+        nav.style.position = 'absolute';
+        nav.style.top = '80px';
+        nav.style.left = '0';
+        nav.style.width = '100%';
+        nav.style.backgroundColor = 'var(--primary)';
+        nav.style.padding = '20px';
+        nav.style.gap = '15px';
+      }
+    });
+        
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+                
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+                
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+                    
+          // Close mobile menu if open
+          const nav = document.querySelector('nav ul');
+          if (window.innerWidth <= 768 && nav.style.display === 'flex') {
+            nav.style.display = 'none';
+          }
+        }
+      });
+    });
+  </script>
+
+</body>
+{{> footer }}
